@@ -1,0 +1,17 @@
+{
+  "name": "hiveclient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "co": "^4.5.4",
+    "debug": "^2.2.0",
+    "jshs2": "^0.2.9",
+    "lodash": "^3.10.0"
+  }
+}

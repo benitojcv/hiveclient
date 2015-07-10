@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node --harmony app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -11,7 +12,9 @@
   "dependencies": {
     "co": "^4.5.4",
     "debug": "^2.2.0",
+    "express": "^4.13.1",
     "jshs2": "^0.2.9",
-    "lodash": "^3.10.0"
+    "lodash": "^3.10.0",
+    "path": "^0.11.14"
   }
 }

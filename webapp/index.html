@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="hiveclientApp" ng-controller="customersCtrl"> 
+ 
+<p>Datos de Hadoop:</p>
+
+<table class="table-striped table-bordered table-hover">
+<tbody>
+  <tr ng-repeat="row in records">
+  	<td ng-repeat="field in headers">
+  		{{ row[field] }}
+  	</td>
+  </tr>
+</tbody>  
+</table>
+
+
+</div>
+
+<script>
+var app = angular.module('hiveclientApp', []);
+	app.controller('customersCtrl', function($scope, $http) {
+    $http.get("http://localhost:3000/records")
+    .success(function (response) {
+    	$scope.records = response;
+    	
+    	$scope.headers = [];
+    	for (var i = 0; i < response[0].length; i++)
+    		$scope.headers.push(i);
+    });
+});
+</script>
+
+</body>
+</html>

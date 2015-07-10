@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 
 app.use(express.static(path.join(__dirname, 'webapp')));
+app.use(express.static(path.join(__dirname, 'bower_components')));
 
 app.get('/records', rc.getRecords);
 

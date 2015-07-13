@@ -22,14 +22,14 @@
  
 <p>Datos de Hadoop:</p>
 
-<table ng-table="tableParams" class="table">
-<theader>
+<table ng-table="tableParams" class="table table-hover table-bordered table-condensed">
+<thead>
 	<tr>
 		<td ng-repeat="h in records[0]">
-		{{ h }}
+		<b>{{ h }}</b>
 		</td>
 	</tr>
-</theader>
+</thead>
 <tbody>
   <tr ng-repeat="row in $data">
 <!--   	
